@@ -1,0 +1,328 @@
+{
+  "exercises": {
+      "back": [
+        {
+          "id": "b_0000",
+          "title": "Prisitraukimai prie kaklo",
+          "media": {
+            "gifThumbnail": "/data/images/prisitrukimai_prie_kaklo.gif"
+          },
+          "description": {
+            "about": "Pagrindinis krūvis tenka nugaros plačiausiems raumenims ir didiesiems apvaliesiems, rombiniams raumenims ir apatinei trapecinio raumens daliai. Papildomai apkraunami dvigalviai žastų ir dilbių raumenys.",
+            "preparation": "Plačiomis rankomis pasikabinkite ant skersinio.",
+            "execution": "Prisitraukite kol skersinis palies kaklą. Leiskite kūną kol rankos ir pečiai bus pilnai ištiesti."
+          }
+        },
+        {
+          "id": "b_0001",
+          "title": "Prisitraukimai prie krūtinės",
+          "media": {
+            "gifThumbnail": "/data/images/prisitraukimai_prie_krutines.gif"
+          },
+          "description": {
+            "about": "Pagrindinis krūvis tenka nugaros plačiausiems raumenims ir didiesiems apvaliesiems, rombiniams raumenims ir apatinei trapecinio raumens daliai. Papildomai apkraunami dvigalviai žastų ir dilbių raumenys.",
+            "preparation": "Plačiomis rankomis pasikabinkite ant skersinio.",
+            "execution": "Prisitraukite kol smakras pakils virš skersinio. Leiskite kūną kol rankos ir pečiai bus pilnai ištiesti."
+          }
+        },
+        {
+          "id": "b_0002",
+          "title": "Štangos trauka pasilenkus",
+          "media": {
+            "gifThumbnail": "/data/images/stangos_trauka_pasilenkus.gif"
+          },
+          "description": {
+            "about": "Pagrindinis krūvis tenka viršutinei nugaros raumenų daliai. Papildomai apkraunami liemens tiesiamieji, dvigalviai žasto ir kojų raumenys. Tai vienas iš pagrindinių pratimų nugaros raumenų viršutinės dalies masei vystyti.",
+            "preparation": "Atsistokite kojomis pečių plotyje. Pasilenkite, kad jūsų nugara būtų kiek galima daugiau lygiagreti grindims. Suimkite štangą iš viršaus šiek tiek plačiau nei pečių plotyje. Kojas šiek tiek sulenkite. Laikykite štangą ištiestomis žemyn rankomis.",
+            "execution": "Traukite štangą tiesiai prie pilvo apačios. Grįžkite į pradinę padėtį. Viso judesio metu galvą laikykite pakėlę, o nugarą tiesią. Nesiūbuokite ir neužsimetinėkite svorio."
+          }
+        },
+        {
+          "id": "b_0003",
+          "title": "T-Bar trauka",
+          "media": {
+            "gifThumbnail": "/data/images/t_bar_trauka.gif"
+          },
+          "description": {
+            "about": "Pagrindinis krūvis tenka viršutinei nugaros raumenų daliai. Papildomai apkraunami liemens tiesiamieji, dvigalviai žasto ir kojų raumenys. Tai vienas iš pagrindinių pratimų nugaros raumenų viršutinės dalies masei vystyti.",
+            "preparation": "Užsidėkite svorį ant vieno štangos galo, patartina kuo nors prispausti ir kitą galą, kad jis neslidinėtų ir nepakiltu. Apsižerkite štanga ir pasilenkite į priekį kiek galima daugiau, kad liemuo būtų lygiagretus grindims. Šiek tiek sulenkite kelius. Suimkite štangą abejomis rankomis šalia svorių.",
+            "execution": "Kelkite štangos galą aukštyn rankas lenkdami per alkūnes, kol svoriai palies krūtinės apačią. Nuleiskite štangą į pradinę poziciją. Nenuleiskite štangos iki grindų. Naudodami daug mažų svorių, vietoj vieno didelio jūs padidinsite judesio amplitudę. Judesio metu laikykite nugarą tiesią, o galvą pakeltą."
+          }
+        },
+        {
+          "id": "b_0004",
+          "title": "Lyno trauka prie pilvo",
+          "media": {
+            "gifThumbnail": "/data/images/lyno_trauka_prie_pilvo.gif"
+          },
+          "description": {
+            "about": "Labiausiai apkraunama apatinė nugaros plačiausiųjų nugaros raumenų dalis bei didieji apvalieji raumenys. Papildomai apkraunami trapecinis, rombiniai bei deltinių raumenų užpakalinė dalis, žastiniai stipinkaulio raumenys.",
+            "preparation": "Atsisėskite ant platformos šiek tiek sulenktais keliais ir suimkite lyno rankeną.",
+            "execution": "Traukite lyną link juosmens tuo pat metu tiesdami nugarą. Išlenkite pečius atgal ir atkiškite krūtinę į priekį. Grįžkite į pradinę padėtį, kai rankos būna tiesios, o pečiai ir nugara išlenkti į priekį."
+          }
+        },
+        {
+          "id": "b_0005",
+          "title": "Lyno trauka prie krūtinės",
+          "media": {
+            "gifThumbnail": "/data/images/lyno_trauka_prie_krutines.gif"
+          },
+          "description": {}
+        },
+        {
+          "id": "b_0006",
+          "title": "Lyno trauka prie kaklo",
+          "media": {
+            "gifThumbnail": "/data/images/lyno_trauka_prie_kaklo.gif"
+          },
+          "description": {}
+        },
+        {
+          "id": "b_0007",
+          "title": "Hantelio trauka",
+          "media": {
+            "gifThumbnail": "/data/images/hantelio_trauka.gif"
+          },
+          "description": {}
+        },
+        {
+          "id": "b_0008",
+          "title": "Labas rytas",
+          "media": {
+            "gifThumbnail": "/data/images/labas_rytas.gif"
+          },
+          "description": {}
+        },
+        {
+          "id": "b_0009",
+          "title": "Nugaros tiesimas (pasikėlimai nugaros apačiai)",
+          "media": {
+            "gifThumbnail": "/data/images/atilenkimai_nugaros_apaciai.gif"
+          },
+          "description": {}
+        }
+      ],
+      "trapezius": [
+        {
+          "id": "t_0000",
+          "title": "Gūžčiojimai su štanga arba hanteliai",
+          "media": {
+            "gifThumbnail": "/data/images/gusciojimai_su_stanga.gif"
+          },
+          "description": {}
+        }
+      ],
+      "shoulders": [
+        {
+          "id": "s_0000",
+          "title": "Štangos spaudimas pečiams",
+          "media": {
+            "gifThumbnail": "/data/images/stangos_spaudimas_is_priekio.gif"
+          },
+          "description": {}
+        },
+        {
+          "id": "s_0001",
+          "title": "Štangos spaudimas pečiams už galvos",
+          "media": {
+            "gifThumbnail": "/data/images/stangos_spaudimas_uz_kaklo.gif"
+          },
+          "description": {}
+        },
+        {
+          "id": "s_0002",
+          "title": "Štangos trauka prie smakro",
+          "media": {
+            "gifThumbnail": "/data/images/stangos_trauka_prie_smakro.gif"
+          },
+          "description": {}
+        },
+        {
+          "id": "s_0003",
+          "title": "Hantelių spaudimas pečiams",
+          "media": {
+            "gifThumbnail": "/data/images/hanteliu_spaudimas_sedint.gif"
+          },
+          "description": {}
+        },
+        {
+          "id": "s_0004",
+          "title": "Hantelių kėlimas į šalis",
+          "media": {
+            "gifThumbnail": "/data/images/mostai_su_hanteliais_stovint.gif"
+          },
+          "description": {}
+        },
+        {
+          "id": "s_0005",
+          "title": "Rankos su lynu kėlimas į šalis",
+          "media": {
+            "gifThumbnail": "/data/images/mostai_viena_ranka_su_lynu.gif"
+          },
+          "description": {}
+        },
+        {
+          "id": "s_0006",
+          "title": "Hantelių kėlimas į priekį",
+          "media": {
+            "gifThumbnail": "/data/images/hanteliu_mostai_i_prieki.gif"
+          },
+          "description": {}
+        },
+        {
+          "id": "s_0007",
+          "title": "Hantelių kėlimas į šalis pasilenkus",
+          "media": {
+            "gifThumbnail": "/data/images/isvedimai_pasilenkus_su_hanteliais.gif"
+          },
+          "description": {}
+        },
+        {
+          "id": "s_0008",
+          "title": "Lynų kėlimas į šalis pasilenkus",
+          "media": {
+            "gifThumbnail": "/data/images/isvedimai_pasilenkus_su_lynu.gif"
+          },
+          "description": {}
+        }
+      ],
+      "chest": [
+        {
+          "id": "c_0000",
+          "title": "Štangos spaudimas",
+          "media": {
+            "gifThumbnail": "/data/images/stangos_spaudimas.gif"
+          },
+          "description": {}
+        },
+        {
+          "id": "c_0001",
+          "title": "Štangos spaudimas kampu",
+          "media": {
+            "gifThumbnail": "/data/images/stangos_spaudimas_kampu.gif"
+          },
+          "description": {}
+        },
+        {
+          "id": "c_0002",
+          "title": "Hantelių spaudimas",
+          "media": {
+            "gifThumbnail": "/data/images/hanteliu_spaudimas.gif"
+          },
+          "description": {}
+        },
+        {
+          "id": "c_0003",
+          "title": "Hantelių spaudimas kampu",
+          "media": {
+            "gifThumbnail": "/data/images/hanteliu_spaudimas_kampu.gif"
+          },
+          "description": {}
+        },
+        {
+          "id": "c_0004",
+          "title": "Plėšimas (rankų suvedimas)",
+          "media": {
+            "gifThumbnail": "/data/images/plesimas_tiesiai.gif"
+          },
+          "description": {}
+        },
+        {
+          "id": "c_0005",
+          "title": "Plėšimas kampu",
+          "media": {
+            "gifThumbnail": "/data/images/plesimas_kampu.gif"
+          },
+          "description": {}
+        },
+        {
+          "id": "c_0006",
+          "title": "Atsispaudimai lygiagretėse",
+          "media": {
+            "gifThumbnail": "/data/images/lygiagretes.gif"
+          },
+          "description": {}
+        }
+      ],
+      "biceps": [
+        {
+          "id": "bp_0000",
+          "title": "Stovint su štanga",
+          "media": {
+            "gifThumbnail": "/data/images/stovint_su_stanga.gif"
+          },
+          "description": {}
+        }
+      ],
+      "triceps": [
+        {
+          "id": "tp_0000",
+          "title": "Štangos spaudimas siaurai",
+          "media": {
+            "gifThumbnail": "/data/images/stangos_spaudimas_siaurai.gif"
+          },
+          "description": {}
+        },
+        {
+          "id": "tp_0001",
+          "title": "Tricepsas sėdint viena ranka",
+          "media": {
+            "gifThumbnail": "/data/images/sedint_viena_ranka.gif"
+          },
+          "description": {}
+        }
+      ],
+      "legs": [
+        {
+          "id": "l_0000",
+          "title": "Pritūpimai",
+          "media": {
+            "gifThumbnail": "/data/images/pritupimai.gif"
+          },
+          "description": {}
+        },
+        {
+          "id": "l_0001",
+          "title": "Mirties trauka (štangos kėlimas nuo žemės)",
+          "media": {
+            "gifThumbnail": "/data/images/d546d-BBDeadlift.gif"
+          },
+          "description": {}
+        },
+        {
+          "id": "l_0002",
+          "title": "Kojų lenkimas gulint",
+          "media": {
+            "gifThumbnail": "/data/images/koju_lenkimas_gulint_kojom.gif"
+          },
+          "description": {}
+        },
+        {
+          "id": "l_0003",
+          "title": "Pasistiebimai sėdint",
+          "media": {
+            "gifThumbnail": "/data/images/blauzda_sedint.gif"
+          },
+          "description": {}
+        }
+      ],
+      "belly": [
+        {
+          "id": "be_0000",
+          "title": "Atsilenkimai",
+          "media": {
+            "gifThumbnail": "/data/images/atsilenkimai.gif"
+          },
+          "description": {}
+        },
+        {
+          "id": "be_0001",
+          "title": "Kojų lenkimas gulint",
+          "media": {
+            "gifThumbnail": "/data/images/koju_lenkimas_gulint.gif"
+          },
+          "description": {}
+        }
+      ]
+  }
+}
