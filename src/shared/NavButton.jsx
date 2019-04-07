@@ -1,12 +1,15 @@
 import React from "react";
 
-import "./NavButton.css";
+import "./NavButton.scss";
 
-export function NavButton({ label, icon }) {
+export function NavButton({ label, icon, isActive, onClick }) {
   return (
-    <div className="navButton">
-      <div className="icon">{icon}</div>
-      <div className="label">{label}</div>
+    <div
+      className={`navButton ${isActive ? "navButton--active" : ""}`}
+      onClick={onClick}
+    >
+      <div className="navButton__icon">{icon}</div>
+      <div className="navButton__label">{label}</div>
     </div>
   );
 }
