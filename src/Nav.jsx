@@ -1,4 +1,4 @@
-import React, { useState, useContext } from "react";
+import React, { useContext } from "react";
 import { NavButton } from "./shared/NavButton";
 import { AppContext } from "./App";
 import { viewLabels as views, actions } from "./constants";

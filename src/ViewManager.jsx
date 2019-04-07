@@ -1,17 +1,24 @@
 import React, { useContext } from "react";
 import { AppContext } from "./App";
+
+/* eslint-disable import/first */
+
+const LazyLogContainer = React.lazy(() =>
+  import(/* webpackChunkName: "log-container" */ "./Log/LogContainer")
+);
+const LazyPlanContainer = React.lazy(() =>
+  import(/* webpackChunkName: "plan-container" */ "./Plan/PlanContainer")
+);
+const LazyFoodContainer = React.lazy(() =>
+  import(/* webpackChunkName: "food-container" */ "./Food/FoodContainer")
+);
+
 import { viewLabels } from "./constants";
 
-import { Log as LogContainer } from "./Log/Log";
-
-const PlanContainer = () => <div>Plan</div>;
-
-const FoodContainer = () => <div>Food</div>;
-
-const viewComponents = {
-  [viewLabels.LOG]: <LogContainer />,
-  [viewLabels.PLAN]: <PlanContainer />,
-  [viewLabels.FOOD]: <FoodContainer />
+const viewEntries = {
+  [viewLabels.LOG]: <LazyLogContainer />,
+  [viewLabels.PLAN]: <LazyPlanContainer />,
+  [viewLabels.FOOD]: <LazyFoodContainer />
 };
 
 export function ViewManager() {
@@ -19,5 +26,5 @@ export function ViewManager() {
     state: { view }
   } = useContext(AppContext);
 
-  return viewComponents[view];
+  return <React.Suspense fallback="">{viewEntries[view]}</React.Suspense>;
 }
