@@ -1,53 +1,31 @@
-import React, { useState } from "react";
+import React, { useReducer } from "react";
+import { Nav } from "./Nav";
+import { ViewManager } from "./ViewManager";
+import { actions } from "./constants";
 
-import { Log } from "./Log/Log";
-import { NavButton } from "./shared/NavButton";
+export const AppContext = React.createContext();
 
-const views = {
-  LOG: "LOG",
-  PLAN: "PLAN",
-  FOOD: "FOOD"
+const initialState = {
+  view: "LOG"
+};
+
+const reducer = (state, action) => {
+  switch (action.type) {
+    case actions.CHANGE_VIEW:
+      return { ...state, view: action.view };
+
+    default:
+      throw new Error("Unexpected action");
+  }
 };
 
 export default function App() {
-  const [view, changeView] = useState("LOG");
-
-  function getView() {
-    switch (view) {
-      case views.LOG:
-        return <Log />;
-      case views.PLAN:
-        return <div>Plan</div>;
-      case views.FOOD:
-        return <div>Food</div>;
-      default:
-        return <Log />;
-    }
-  }
+  const [state, dispatch] = useReducer(reducer, initialState);
 
   return (
-    <div>
-      <div style={{ display: "flex" }}>
-        <NavButton
-          isActive={view == views.LOG}
-          onClick={() => changeView(views.LOG)}
-          label="Log"
-          icon="📖"
-        />
-        <NavButton
-          isActive={view == views.PLAN}
-          onClick={() => changeView(views.PLAN)}
-          label="Plan"
-          icon="🏋"
-        />
-        <NavButton
-          isActive={view == views.FOOD}
-          onClick={() => changeView(views.FOOD)}
-          label="Food"
-          icon="🍎"
-        />
-      </div>
-      {getView()}
-    </div>
+    <AppContext.Provider value={{ state, dispatch }}>
+      <Nav />
+      <ViewManager />
+    </AppContext.Provider>
   );
 }

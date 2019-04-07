@@ -2,11 +2,11 @@ import React from "react";
 
 import "./Input.scss";
 
-export function Input({ label, onChange, value }) {
+export function Input({ label, ...inputProps }) {
   return (
     <div className="input">
       <label className="input__label">{label}</label>
-      <input className="input__input" onChange={onChange} value={value} />
+      <input className="input__input" {...inputProps} />
     </div>
   );
 }

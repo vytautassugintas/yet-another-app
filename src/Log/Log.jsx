@@ -3,7 +3,7 @@ import { Input } from "../shared/Input";
 import { Button } from "../shared/Button";
 
 export function Log() {
-  const [state, updateState] = useState(null);
+  const [state, updateState] = useState("");
   const [log, updateLog] = useState([]);
 
   function submit(e) {
