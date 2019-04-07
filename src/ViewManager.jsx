@@ -1,4 +1,4 @@
-import React, { useContext } from "react";
+import React, { useContext, useEffect } from "react";
 import { AppContext } from "./App";
 
 /* eslint-disable import/first */
@@ -13,7 +13,7 @@ const LazyFoodContainer = React.lazy(() =>
   import(/* webpackChunkName: "food-container" */ "./Food/FoodContainer")
 );
 
-import { viewLabels } from "./shared/constants";
+import { viewLabels, actions } from "./shared/constants";
 
 const viewEntries = {
   [viewLabels.LOG]: <LazyLogContainer />,
@@ -21,10 +21,26 @@ const viewEntries = {
   [viewLabels.FOOD]: <LazyFoodContainer />
 };
 
+const initialView = viewLabels.LOG;
+
 export function ViewManager() {
   const {
-    state: { view }
+    state: { view = initialView },
+    dispatch
   } = useContext(AppContext);
+
+  function changeView(view) {
+    dispatch({ type: actions.CHANGE_VIEW, view, force: true });
+  }
+
+  useEffect(function handleViewHistoryChange() {
+    const popStateListener = window.addEventListener("popstate", () => {
+      const { state } = window.history;
+      changeView(state || initialView);
+    });
+
+    return window.removeEventListener("popstate", popStateListener);
+  }, []);
 
   return <React.Suspense fallback="">{viewEntries[view]}</React.Suspense>;
 }

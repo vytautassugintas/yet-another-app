@@ -5,6 +5,20 @@ import { actions } from "./shared/constants";
 
 export const AppContext = React.createContext();
 
+function handleViewChange(state, action) {
+  if (action.view !== state.view) {
+    if (!action.force) {
+      window.history.pushState(action.view, action.view, action.view);
+    }
+
+    return {
+      ...state,
+      view: action.view
+    };
+  }
+  return state;
+}
+
 const initialState = {
   view: "LOG"
 };
@@ -12,7 +26,7 @@ const initialState = {
 const reducer = (state, action) => {
   switch (action.type) {
     case actions.CHANGE_VIEW:
-      return { ...state, view: action.view };
+      return handleViewChange(state, action);
 
     default:
       throw new Error("Unexpected action");
