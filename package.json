@@ -1,25 +1,22 @@
 {
-  "name": "my-new-project",
-  "main": "node_modules/expo/AppEntry.js",
-  "private": true,
+  "name": "app",
+  "version": "1.0.0",
+  "private": false,
   "scripts": {
-    "start": "expo start",
-    "android": "expo start --android",
-    "ios": "expo start --ios",
-    "eject": "expo eject",
-    "test": "node ./node_modules/jest/bin/jest.js --watchAll"
-  },
-  "jest": {
-    "preset": "jest-expo"
+    "start": "react-scripts start",
+    "build": "react-scripts build",
+    "test": "react-scripts test --env=jsdom"
   },
   "dependencies": {
-    "@expo/samples": "2.1.1",
-    "expo": "^30.0.1",
-    "react": "16.3.1",
-    "react-native": "https://github.com/expo/react-native/archive/sdk-30.0.0.tar.gz",
-    "react-navigation": "^2.16.0"
+    "react": "^16.8.0",
+    "react-dom": "^16.8.0",
+    "react-scripts": "^2.0.0"
   },
-  "devDependencies": {
-    "jest-expo": "30.0.0"
-  }
+  "devDependencies": {},
+  "browserslist": [
+    ">0.2%",
+    "not dead",
+    "not ie <= 11",
+    "not op_mini all"
+  ]
 }
