@@ -1,5 +1,11 @@
 import React from "react";
 
+import { Log } from "./Log/Log";
+
 export default function App() {
-  return <p>Hello App</p>;
+  return (
+    <div>
+      <Log />
+    </div>
+  );
 }
