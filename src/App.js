@@ -1,7 +1,7 @@
 import React, { useReducer } from "react";
 import { Nav } from "./Nav";
 import { ViewManager } from "./ViewManager";
-import { actions } from "./constants";
+import { actions } from "./shared/constants";
 
 export const AppContext = React.createContext();
 

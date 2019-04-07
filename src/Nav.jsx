@@ -1,7 +1,7 @@
 import React, { useContext } from "react";
-import { NavButton } from "./shared/NavButton";
+import { NavButton } from "./shared";
 import { AppContext } from "./App";
-import { viewLabels as views, actions } from "./constants";
+import { viewLabels as views, actions } from "./shared/constants";
 
 export function Nav() {
   const {

@@ -1,6 +1,6 @@
 import React, { useState } from "react";
-import { Input } from "../shared/Input";
-import { Button } from "../shared/Button";
+import { Input } from "../shared";
+import { Button } from "../shared";
 
 export default function LogContainer() {
   const [state, updateState] = useState("");

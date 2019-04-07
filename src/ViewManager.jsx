@@ -13,7 +13,7 @@ const LazyFoodContainer = React.lazy(() =>
   import(/* webpackChunkName: "food-container" */ "./Food/FoodContainer")
 );
 
-import { viewLabels } from "./constants";
+import { viewLabels } from "./shared/constants";
 
 const viewEntries = {
   [viewLabels.LOG]: <LazyLogContainer />,
