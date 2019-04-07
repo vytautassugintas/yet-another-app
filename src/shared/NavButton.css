@@ -1,0 +1,26 @@
+.navButton {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 6px;
+  width: 64px;
+  height: 64px;
+  border-radius: 3px;
+  background-color: blueviolet;
+  color: #ffffff;
+}
+
+.navButton > .label {
+  text-transform: uppercase;
+  letter-spacing: 1.2px;
+  font-weight: 400;
+}
+
+.navButton > .icon {
+  font-size: 24px;
+}
+
+.navButton:nth-of-type(1) {
+  margin-right: 6px;
+}

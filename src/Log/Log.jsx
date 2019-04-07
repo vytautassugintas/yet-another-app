@@ -14,7 +14,6 @@ export function Log() {
 
   return (
     <div>
-      <p>Log</p>
       <form onSubmit={submit}>
         <Input
           label="Entry"
