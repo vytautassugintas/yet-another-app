@@ -1,7 +1,8 @@
 import React, { useContext } from "react";
 import { NavButton } from "./shared";
 import { AppContext } from "./App";
-import { viewLabels as views, actions } from "./shared/constants";
+import { viewLabels as views } from "./shared/constants";
+import { changeView as changeViewAction } from "./shared/state/actions";
 
 export function Nav() {
   const {
@@ -10,7 +11,7 @@ export function Nav() {
   } = useContext(AppContext);
 
   function changeView(view) {
-    dispatch({ type: actions.CHANGE_VIEW, view });
+    dispatch(changeViewAction({ view }));
   }
 
   return (

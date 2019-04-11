@@ -7,5 +7,6 @@ export const viewLabels = {
 };
 
 export const actions = {
-  CHANGE_VIEW: "changeView"
+  CHANGE_VIEW: "changeView",
+  UPDATE_LOG: "updateLog"
 };

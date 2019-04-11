@@ -1,6 +1,7 @@
 import React, { useContext, useEffect } from "react";
 import { AppContext } from "./App";
-import { viewLabels, actions } from "./shared/constants";
+import { viewLabels } from "./shared/constants";
+import { changeView as changeViewAction } from "./shared/state/actions";
 
 /* eslint-disable import/first */
 
@@ -29,7 +30,7 @@ export function ViewManager() {
   } = useContext(AppContext);
 
   function changeView(view) {
-    dispatch({ type: actions.CHANGE_VIEW, view, force: true });
+    dispatch(changeViewAction({ view, force: true }));
   }
 
   useEffect(function handleViewHistoryChange() {

@@ -1,14 +1,19 @@
-import React, { useState } from "react";
-import { Input } from "../shared";
-import { Button } from "../shared";
+import React, { useState, useContext } from "react";
+import { Input, Button } from "../shared";
+import { AppContext } from "../App";
+import { updateLog } from "../shared/state/actions";
+import { generateAlmostUniqueId } from "../shared/helpers/generateUniqueID";
 
 export default function LogContainer() {
   const [state, updateState] = useState("");
-  const [log, updateLog] = useState([]);
+  const {
+    state: { logs },
+    dispatch
+  } = useContext(AppContext);
 
   function submit(e) {
     e.preventDefault();
-    updateLog([...log, state]);
+    dispatch(updateLog({ id: generateAlmostUniqueId(), entry: state }));
     updateState("");
   }
 
@@ -23,8 +28,8 @@ export default function LogContainer() {
         <Button type="submit" label="+ Add" />
       </form>
       <div>
-        {log.map(entry => (
-          <p>{entry}</p>
+        {logs.map(l => (
+          <p key={l.id}>{l.entry}</p>
         ))}
       </div>
     </div>
