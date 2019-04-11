@@ -1,3 +1,5 @@
+export const APP_STATE_STORAGE_KEY = "yet-another-app-state";
+
 export const viewLabels = {
   LOG: "LOG",
   PLAN: "PLAN",

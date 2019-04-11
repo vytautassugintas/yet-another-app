@@ -1,5 +1,6 @@
 import React, { useContext, useEffect } from "react";
 import { AppContext } from "./App";
+import { viewLabels, actions } from "./shared/constants";
 
 /* eslint-disable import/first */
 
@@ -13,15 +14,13 @@ const LazyFoodContainer = React.lazy(() =>
   import(/* webpackChunkName: "food-container" */ "./Food/FoodContainer")
 );
 
-import { viewLabels, actions } from "./shared/constants";
+const initialView = viewLabels.LOG;
 
 const viewEntries = {
   [viewLabels.LOG]: <LazyLogContainer />,
   [viewLabels.PLAN]: <LazyPlanContainer />,
   [viewLabels.FOOD]: <LazyFoodContainer />
 };
-
-const initialView = viewLabels.LOG;
 
 export function ViewManager() {
   const {

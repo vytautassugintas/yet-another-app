@@ -1,7 +1,8 @@
-import React, { useReducer } from "react";
+import React from "react";
+import { useLocalStorageReducer } from "./shared/hooks/useLocalStorageReducer";
 import { Nav } from "./Nav";
 import { ViewManager } from "./ViewManager";
-import { actions } from "./shared/constants";
+import { APP_STATE_STORAGE_KEY, actions } from "./shared/constants";
 
 export const AppContext = React.createContext();
 
@@ -20,7 +21,9 @@ function handleViewChange(state, action) {
 }
 
 const initialState = {
-  view: "LOG"
+  view: "LOG",
+  logs: [],
+  plan: {}
 };
 
 const reducer = (state, action) => {
@@ -34,7 +37,11 @@ const reducer = (state, action) => {
 };
 
 export default function App() {
-  const [state, dispatch] = useReducer(reducer, initialState);
+  const [state, dispatch] = useLocalStorageReducer(
+    APP_STATE_STORAGE_KEY,
+    reducer,
+    initialState
+  );
 
   return (
     <AppContext.Provider value={{ state, dispatch }}>
