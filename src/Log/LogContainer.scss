@@ -1,0 +1,12 @@
+@import "../shared/mixins";
+@import "../shared/variables";
+
+.log {
+  display: flex;
+  justify-content: space-between;
+  padding: $spacing-sm;
+
+  &__display-date {
+    font-size: 12px;
+  }
+}

@@ -15,5 +15,5 @@ export const changeView = (state, payload) => {
 
 export const updateLog = (state, payload) => ({
   ...state,
-  logs: [...state.logs, payload]
+  logs: [...state.logs, { ...payload, dateAdded: Date.now() }]
 });

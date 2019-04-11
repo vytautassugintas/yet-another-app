@@ -4,8 +4,10 @@ import { AppContext } from "../App";
 import { updateLog } from "../shared/state/actions";
 import { generateAlmostUniqueId } from "../shared/helpers/generateUniqueID";
 
+import "./LogContainer.scss";
+
 export default function LogContainer() {
-  const [state, updateState] = useState("");
+  const [inputValue, updateInputValue] = useState("");
   const {
     state: { logs },
     dispatch
@@ -13,8 +15,8 @@ export default function LogContainer() {
 
   function submit(e) {
     e.preventDefault();
-    dispatch(updateLog({ id: generateAlmostUniqueId(), entry: state }));
-    updateState("");
+    dispatch(updateLog({ id: generateAlmostUniqueId(), entry: inputValue }));
+    updateInputValue("");
   }
 
   return (
@@ -22,14 +24,19 @@ export default function LogContainer() {
       <form onSubmit={submit}>
         <Input
           label="Entry"
-          value={state}
-          onChange={e => updateState(e.target.value)}
+          value={inputValue}
+          onChange={e => updateInputValue(e.target.value)}
         />
         <Button type="submit" label="+ Add" />
       </form>
       <div>
         {logs.map(l => (
-          <p key={l.id}>{l.entry}</p>
+          <div className="log" key={l.id}>
+            {l.entry}{" "}
+            <span className="log__display-date">
+              {new Date(l.dateAdded).toLocaleTimeString()}
+            </span>
+          </div>
         ))}
       </div>
     </div>

@@ -1,5 +1,5 @@
-@import "../mixins";
-@import "../variables";
+@import "../../mixins";
+@import "../../variables";
 
 .navButton {
   @include flex-container-center($direction: column);
@@ -10,6 +10,10 @@
   background-color: $primary-color;
   color: $light-color;
 
+  &--active {
+    background-color: $primary-accent-color;
+  }
+
   &__label {
     text-transform: uppercase;
     letter-spacing: 1.2px;
@@ -18,9 +22,5 @@
 
   &__icon {
     font-size: 24px;
-  }
-
-  &--active {
-    background-color: $primary-accent-color;
   }
 }
