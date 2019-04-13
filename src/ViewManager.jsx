@@ -8,6 +8,11 @@ import { changeView as changeViewAction } from "./shared/state/actions";
 const LazyLogContainer = React.lazy(() =>
   import(/* webpackChunkName: "log-container" */ "./Log/LogContainer")
 );
+
+const LazyWeightLog = React.lazy(() =>
+  import(/* webpackChunkName: "weight-log-container" */ "./Log/WeightLog")
+);
+
 const LazyPlanContainer = React.lazy(() =>
   import(/* webpackChunkName: "plan-container" */ "./Plan/PlanContainer")
 );
@@ -19,6 +24,7 @@ const initialView = viewLabels.LOG;
 
 const viewEntries = {
   [viewLabels.LOG]: <LazyLogContainer />,
+  [viewLabels.LOG_WEIGHT]: <LazyWeightLog />,
   [viewLabels.PLAN]: <LazyPlanContainer />,
   [viewLabels.FOOD]: <LazyFoodContainer />
 };

@@ -1,44 +1,46 @@
-import React, { useState, useContext } from "react";
-import { Input, Button } from "../shared";
+import React, { useContext } from "react";
 import { AppContext } from "../App";
-import { updateLog } from "../shared/state/actions";
-import { generateAlmostUniqueId } from "../shared/helpers/generateUniqueID";
+import { changeView } from "../shared/state/actions";
+import { viewLabels } from "../shared/constants";
 
 import "./LogContainer.scss";
 
 export default function LogContainer() {
-  const [inputValue, updateInputValue] = useState("");
   const {
     state: { logs },
     dispatch
   } = useContext(AppContext);
 
-  function submit(e) {
-    e.preventDefault();
-    dispatch(updateLog({ id: generateAlmostUniqueId(), entry: inputValue }));
-    updateInputValue("");
+  function changeLogView(logView) {
+    dispatch(changeView({ view: logView }));
   }
+
+  const lastWeightLog = logs[0];
 
   return (
     <div>
-      <form onSubmit={submit}>
-        <Input
-          label="Entry"
-          value={inputValue}
-          onChange={e => updateInputValue(e.target.value)}
-        />
-        <Button type="submit" label="+ Add" />
-      </form>
-      <div>
-        {logs.map(l => (
-          <div className="log" key={l.id}>
-            {l.entry}{" "}
-            <span className="log__display-date">
-              {new Date(l.dateAdded).toLocaleTimeString()}
-            </span>
+      <div onClick={() => changeLogView(viewLabels.LOG_WEIGHT)} className="cta">
+        <div>
+          <div className="cta__weight-label">Weight</div>
+          <div>
+            {lastWeightLog.entry} kg |{" "}
+            {new Date(lastWeightLog.dateAdded).toLocaleDateString()}
           </div>
-        ))}
+        </div>
+        <div>
+          <i class="material-icons">keyboard_arrow_right</i>
+        </div>
       </div>
+      <div className="cta">
+        <div>
+          <div className="cta__weight-label">Hydration</div>
+          <div>220ml | 2h ago</div>
+        </div>
+        <div>
+          <i class="material-icons">keyboard_arrow_right</i>
+        </div>
+      </div>
+      {/* {logs[log]} */}
     </div>
   );
 }

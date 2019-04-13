@@ -1,12 +1,13 @@
-@import "../shared/mixins";
 @import "../shared/variables";
 
-.log {
+.cta {
   display: flex;
   justify-content: space-between;
+  align-items: center;
+
   padding: $spacing-sm;
 
-  &__display-date {
-    font-size: 12px;
+  &__weight-label {
+    font-weight: 700;
   }
 }

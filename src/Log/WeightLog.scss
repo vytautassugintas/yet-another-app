@@ -1,0 +1,11 @@
+@import "../shared/variables";
+
+.log {
+  display: flex;
+  flex-direction: column;
+  padding: $spacing-sm;
+
+  &__display-date {
+    font-size: 12px;
+  }
+}

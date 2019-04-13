@@ -2,11 +2,16 @@
 
 .input {
   display: flex;
+  align-items: center;
   padding: 24px 0;
 
   &__label {
     align-self: center;
-    margin-right: $spacing-base;
+    margin-right: $spacing-sm;
+
+    &--right {
+      margin-left: $spacing-sm;
+    }
   }
 
   &__input {
