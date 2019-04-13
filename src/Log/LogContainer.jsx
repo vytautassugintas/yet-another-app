@@ -15,20 +15,22 @@ export default function LogContainer() {
     dispatch(changeView({ view: logView }));
   }
 
-  const lastWeightLog = logs[0];
+  const lastWeightLog = logs.length && logs[0];
 
   return (
     <div>
       <div onClick={() => changeLogView(viewLabels.LOG_WEIGHT)} className="cta">
         <div>
           <div className="cta__weight-label">Weight</div>
-          <div>
-            {lastWeightLog.entry} kg |{" "}
-            {new Date(lastWeightLog.dateAdded).toLocaleDateString()}
-          </div>
+          {!!lastWeightLog && (
+            <div>
+              {lastWeightLog.entry} kg |{" "}
+              {new Date(lastWeightLog.dateAdded).toLocaleDateString()}
+            </div>
+          )}
         </div>
         <div>
-          <i class="material-icons">keyboard_arrow_right</i>
+          <i className="material-icons">keyboard_arrow_right</i>
         </div>
       </div>
       <div className="cta">
@@ -37,7 +39,7 @@ export default function LogContainer() {
           <div>220ml | 2h ago</div>
         </div>
         <div>
-          <i class="material-icons">keyboard_arrow_right</i>
+          <i className="material-icons">keyboard_arrow_right</i>
         </div>
       </div>
       {/* {logs[log]} */}

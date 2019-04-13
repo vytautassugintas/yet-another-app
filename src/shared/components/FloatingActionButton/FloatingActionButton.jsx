@@ -19,7 +19,7 @@ export function FloatingActionButton() {
         shrink ? "floatingActionButton--shrink" : ""
       }`}
     >
-      <i class="material-icons">add</i>
+      <i className="material-icons">add</i>
     </div>
   );
 }

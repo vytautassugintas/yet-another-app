@@ -8,4 +8,37 @@
   &__display-date {
     font-size: 12px;
   }
+
+  &__dashboard {
+    min-height: 120px;
+    padding: 6px;
+    border: 1px solid #ecf0f1;
+    border-radius: 2px;
+    display: flex;
+
+    &__y-axis {
+      min-height: 120px;
+      font-size: 12px;
+      width: 20px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+
+    &__x-axis {
+      margin-left: 26px;
+      font-size: 12px;
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-end;
+      width: 100%;
+
+      &__point {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        font-size: 9px;
+      }
+    }
+  }
 }
