@@ -10,7 +10,7 @@ const LazyLogContainer = React.lazy(() =>
 );
 
 const LazyWeightLog = React.lazy(() =>
-  import(/* webpackChunkName: "weight-log-container" */ "./Log/WeightLog")
+  import(/* webpackChunkName: "weight-log-container" */ "./Log/WeightLog/WeightLog")
 );
 
 const LazyPlanContainer = React.lazy(() =>

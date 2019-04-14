@@ -5,6 +5,12 @@
   justify-content: center;
 }
 
+@mixin flex-container-space-between($direction: row) {
+  display: flex;
+  flex-direction: $direction;
+  justify-content: space-between;
+}
+
 @mixin size($size) {
   width: $size;
   height: $size;
