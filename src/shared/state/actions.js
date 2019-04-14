@@ -1,17 +1,30 @@
 export const actions = {
   CHANGE_VIEW: "changeView",
-  UPDATE_LOG: "updateLog"
+  UPDATE_LOG: "updateLog",
+  ADD_INGREDIENT: "addIngredient"
 };
 
-export const changeView = ({ view, force = false }) => ({
+export const changeView = ({ view, force = false, meta }) => ({
   type: actions.CHANGE_VIEW,
   payload: {
     view,
-    force
+    force,
+    meta
   }
 });
 
 export const updateLog = entry => ({
   type: actions.UPDATE_LOG,
-  payload: entry
+  payload: {
+    ...entry
+  }
+});
+
+export const addIngredient = ({ id, grams, clear = false }) => ({
+  type: actions.ADD_INGREDIENT,
+  payload: {
+    id,
+    grams,
+    clear
+  }
 });

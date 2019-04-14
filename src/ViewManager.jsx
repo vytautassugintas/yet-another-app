@@ -16,8 +16,17 @@ const LazyWeightLog = React.lazy(() =>
 const LazyPlanContainer = React.lazy(() =>
   import(/* webpackChunkName: "plan-container" */ "./Plan/PlanContainer")
 );
+
 const LazyFoodContainer = React.lazy(() =>
   import(/* webpackChunkName: "food-container" */ "./Food/FoodContainer")
+);
+
+const LazyCreateMealView = React.lazy(() =>
+  import(/* webpackChunkName: "food-create-meal" */ "./Food/CreateMeal")
+);
+
+const LazyFoodListView = React.lazy(() =>
+  import(/* webpackChunkName: "food-list" */ "./Food/FoodList")
 );
 
 const initialView = viewLabels.LOG;
@@ -26,7 +35,9 @@ const viewEntries = {
   [viewLabels.LOG]: <LazyLogContainer />,
   [viewLabels.LOG_WEIGHT]: <LazyWeightLog />,
   [viewLabels.PLAN]: <LazyPlanContainer />,
-  [viewLabels.FOOD]: <LazyFoodContainer />
+  [viewLabels.FOOD]: <LazyFoodContainer />,
+  [viewLabels.FOOD_CREATE_MEAL]: <LazyCreateMealView />,
+  [viewLabels.FOOD_LIST]: <LazyFoodListView />
 };
 
 export function ViewManager() {

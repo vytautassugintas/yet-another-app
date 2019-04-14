@@ -1,5 +1,6 @@
 import React from "react";
 import { currentPlan } from "../../shared/workout";
+
 import "./Workout.scss";
 
 export function Workout() {

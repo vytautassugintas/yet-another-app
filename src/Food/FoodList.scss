@@ -1,15 +1,27 @@
-.FoodItem {
-  margin-bottom: 12px;
+.Modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.6);
 
-  &__title {
-    font-weight: 700;
+  &__main {
+    padding: 24px;
+    position: fixed;
+    background: white;
+    width: 80%;
+    height: auto;
+    top: 30%;
+    left: 50%;
+    transform: translate(-50%, -50%);
   }
 
-  &__macros {
-    font-size: 14px;
+  &--display-block {
+    display: block;
+  }
 
-    span {
-      padding-right: 6px;
-    }
+  &--display-none {
+    display: none;
   }
 }

@@ -4,7 +4,9 @@ export const viewLabels = {
   LOG: "LOG",
   LOG_WEIGHT: "LOG_WEIGHT",
   PLAN: "PLAN",
-  FOOD: "FOOD"
+  FOOD: "FOOD",
+  FOOD_CREATE_MEAL: "FOOD_CREATE_MEAL",
+  FOOD_LIST: "FOOD_LIST"
 };
 
 export const actions = {

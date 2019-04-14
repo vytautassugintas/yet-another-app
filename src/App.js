@@ -18,7 +18,7 @@ export default function App() {
     <AppContext.Provider value={{ state, dispatch }}>
       <Nav />
       <ViewManager />
-      <FloatingActionButton />
+      {/* <FloatingActionButton /> */}
     </AppContext.Provider>
   );
 }

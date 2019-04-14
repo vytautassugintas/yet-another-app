@@ -1,10 +1,11 @@
-import { changeView, updateLog } from "./updators";
+import { changeView, updateLog, updateIngredients } from "./updators";
 import { actions } from "./actions";
 
 export const initialState = {
   view: "LOG",
   logs: [],
-  plan: {}
+  plan: {},
+  selectedIngredients: []
 };
 
 export const reducer = (state, action) => {
@@ -14,6 +15,9 @@ export const reducer = (state, action) => {
 
     case actions.UPDATE_LOG:
       return updateLog(state, action.payload);
+
+    case actions.ADD_INGREDIENT:
+      return updateIngredients(state, action.payload);
 
     default:
       throw new Error("Unexpected action");

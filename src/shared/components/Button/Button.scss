@@ -10,8 +10,18 @@
   border-radius: $border-radius-base;
   background-color: $primary-color;
   color: $light-color;
+  transition: all 1s;
+  transform: scale(1);
 
   &:hover {
     cursor: pointer;
+  }
+
+  &--block {
+    border-radius: 0;
+  }
+
+  &--pulse {
+    transform: scale(1.1);
   }
 }

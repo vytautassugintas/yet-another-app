@@ -1,0 +1,12 @@
+@import "../../variables";
+
+.EntryButton {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: $spacing-sm;
+
+  &__label {
+    font-weight: 700;
+  }
+}
