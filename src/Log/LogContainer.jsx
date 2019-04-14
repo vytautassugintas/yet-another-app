@@ -42,7 +42,6 @@ export default function LogContainer() {
           <i className="material-icons">keyboard_arrow_right</i>
         </div>
       </div>
-      {/* {logs[log]} */}
     </div>
   );
 }
