@@ -33,15 +33,6 @@ export default function LogContainer() {
           <i className="material-icons">keyboard_arrow_right</i>
         </div>
       </div>
-      <div className="cta">
-        <div>
-          <div className="cta__weight-label">Hydration</div>
-          <div>220ml | 2h ago</div>
-        </div>
-        <div>
-          <i className="material-icons">keyboard_arrow_right</i>
-        </div>
-      </div>
     </div>
   );
 }
