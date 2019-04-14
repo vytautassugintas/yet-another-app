@@ -1,0 +1,15 @@
+.FoodItem {
+  margin-bottom: 12px;
+
+  &__title {
+    font-weight: 700;
+  }
+
+  &__macros {
+    font-size: 14px;
+
+    span {
+      padding-right: 6px;
+    }
+  }
+}

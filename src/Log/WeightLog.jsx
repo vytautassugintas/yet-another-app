@@ -77,9 +77,6 @@ const WeightDashboard = ({ logs }) => {
   const minWeight = isWeightEqual(weightLog)
     ? Math.max(...weightLog) - 2
     : Math.min(...weightLog);
-  const average = isWeightEqual(weightLog)
-    ? Math.max(...weightLog) - 1
-    : weightLog.reduce((a, b) => a + b, 0) / weightLog.length;
 
   const weightPoints = logs.map((l, i) => {
     return {
@@ -110,14 +107,13 @@ const WeightDashboard = ({ logs }) => {
     }));
   }
 
-  const weightLogs = [...weightPoints, ...addRemainingDays()];
+  const weightLogs = [...weightPoints.reverse(), ...addRemainingDays()];
 
   return (
     <>
       <div className="log__dashboard">
         <span className="log__dashboard__y-axis">
           <span>{maxWeight}</span>
-          <span>{average.toFixed(0)}</span>
           <span>{minWeight}</span>
         </span>
         <span className="log__dashboard__x-axis">
