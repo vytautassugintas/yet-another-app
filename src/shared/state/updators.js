@@ -1,3 +1,5 @@
+import { generateAlmostUniqueId } from "../helpers/generateUniqueID";
+
 export const changeView = (state, payload) => {
   if (payload.view !== state.view) {
     let meta = payload.meta;
@@ -27,5 +29,35 @@ export const updateIngredients = (state, payload) => ({
   ...state,
   selectedIngredients: payload.clear
     ? []
-    : [...state.selectedIngredients, { id: payload.id, grams: payload.grams }]
+    : [
+        ...state.selectedIngredients,
+        { id: payload.id, grams: parseInt(payload.grams) }
+      ]
 });
+
+export const removeIngredient = (state, payload) => ({
+  ...state,
+  selectedIngredients: state.selectedIngredients.filter(
+    i => i.id !== payload.id
+  )
+});
+
+export const updateMeal = (state, payload) => {
+  switch (payload.updateType) {
+    case "create":
+      return {
+        ...state,
+        meals: [
+          ...state.meals,
+          {
+            id: generateAlmostUniqueId(),
+            title: payload.title,
+            ingredients: state.selectedIngredients
+          }
+        ],
+        selectedIngredients: []
+      };
+    default:
+      return state;
+  }
+};

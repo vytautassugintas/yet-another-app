@@ -10,6 +10,10 @@ export default function FoodContainer() {
   return (
     <div>
       <EntryButton
+        label="Meals"
+        onClick={() => dispatch(changeView({ view: viewLabels.FOOD_MEALS }))}
+      />
+      <EntryButton
         label="Create Meal"
         onClick={() =>
           dispatch(changeView({ view: viewLabels.FOOD_CREATE_MEAL }))
