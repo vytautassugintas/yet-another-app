@@ -1,5 +1,5 @@
 import React, { useState, useContext } from "react";
-import { Input, Button } from "../shared";
+import { Input, Button, Modal } from "../shared";
 import { foods, getFoodById, modifyMacros } from "../shared/foods";
 import { changeView, addIngredient } from "../shared/state/actions";
 import { viewLabels } from "../shared/constants";
@@ -7,21 +7,6 @@ import { AppContext } from "../App";
 import { FoodItem } from "./FoodItem";
 
 import "./FoodList.scss";
-
-const Modal = ({ handleClose, show, children }) => {
-  const showHideClassName = show
-    ? "Modal--display-block"
-    : "Modal--display-none";
-
-  return (
-    <div className={`Modal ${showHideClassName}`}>
-      <section className="Modal__main">
-        {children}
-        {/* <button onClick={handleClose}>close</button> */}
-      </section>
-    </div>
-  );
-};
 
 export default function FoodList() {
   const [showModal, setShowModal] = useState(false);

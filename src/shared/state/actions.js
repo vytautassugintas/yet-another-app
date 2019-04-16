@@ -1,7 +1,9 @@
 export const actions = {
   CHANGE_VIEW: "changeView",
   UPDATE_LOG: "updateLog",
-  ADD_INGREDIENT: "addIngredient"
+  ADD_INGREDIENT: "addIngredient",
+  REMOVE_INGREDIENT: "removeIngredient",
+  UPDATE_MEAL: "updateMeal"
 };
 
 export const changeView = ({ view, force = false, meta }) => ({
@@ -26,5 +28,21 @@ export const addIngredient = ({ id, grams, clear = false }) => ({
     id,
     grams,
     clear
+  }
+});
+
+export const removeIngredient = ({ id }) => ({
+  type: actions.REMOVE_INGREDIENT,
+  payload: {
+    id
+  }
+});
+
+export const updateMeal = ({ title, updateType, id }) => ({
+  type: actions.UPDATE_MEAL,
+  payload: {
+    title,
+    updateType,
+    id
   }
 });

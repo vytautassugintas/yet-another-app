@@ -3,5 +3,6 @@ import { Input } from "./components/Input/Input";
 import { NavButton } from "./components/NavButton/NavButton";
 import { FloatingActionButton } from "./components/FloatingActionButton/FloatingActionButton";
 import { EntryButton } from "./components/EntryButton/EntryButton";
+import { Modal } from "./components/Modal/Modal";
 
-export { Button, Input, NavButton, EntryButton, FloatingActionButton };
+export { Button, Input, NavButton, EntryButton, FloatingActionButton, Modal };

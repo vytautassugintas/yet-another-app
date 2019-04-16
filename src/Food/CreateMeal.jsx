@@ -1,17 +1,26 @@
-import React, { useContext } from "react";
-import { changeView, addIngredient } from "../shared/state/actions";
+import React, { useContext, useState } from "react";
+import {
+  changeView,
+  removeIngredient,
+  updateMeal
+} from "../shared/state/actions";
 import { viewLabels } from "../shared/constants";
 import { AppContext } from "../App";
-import { EntryButton, Button } from "../shared";
+import { EntryButton, Button, Input, Modal } from "../shared";
 import { getFoodById, modifyMacros, calculateTotals } from "../shared/foods";
 import { FoodItem } from "./FoodItem";
 import { FoodMacros } from "./FoodMacros";
 
+import "./CreateMeal.scss";
+
 export default function CreateMeal() {
   const {
     dispatch,
-    state: { selectedIngredients }
+    state: { selectedIngredients, meals }
   } = useContext(AppContext);
+
+  const [title, setTitle] = useState("");
+  const [showModal, setShowModal] = useState(false);
 
   const hasIngredients = !!selectedIngredients.length;
 
@@ -22,14 +31,43 @@ export default function CreateMeal() {
       })
     : [];
 
-  function onCreateClick() {
-    dispatch(addIngredient({ clear: true }));
+  function openCreateModal() {
+    setShowModal(true);
+  }
+
+  function handleCreateClick() {
+    dispatch(updateMeal({ title, updateType: "create" }));
+    setShowModal(false);
+  }
+
+  function handleClearClick(id) {
+    dispatch(removeIngredient({ id }));
   }
 
   const totals = calculateTotals(ingredients);
 
   return (
     <div>
+      <Modal show={showModal} handleClose={() => setShowModal(false)}>
+        <div className="Modal__body">
+          <Input
+            placeholder="Meal Title"
+            value={title}
+            onChange={e => setTitle(e.target.value)}
+          />
+          <div className="CreateMeal__totals">
+            <b>Totals</b>
+            <FoodMacros macros={totals.macros} kcal={totals.kcal} />
+          </div>
+          <Button onClick={handleCreateClick} label="Create" />
+        </div>
+      </Modal>
+      {hasIngredients && (
+        <div className="CreateMeal__totals">
+          <b>Totals</b>
+          <FoodMacros macros={totals.macros} kcal={totals.kcal} />
+        </div>
+      )}
       <div>
         {hasIngredients ? <b>Selected ingredients</b> : "No ingredients"}
         {ingredients.map(ingredient => {
@@ -38,6 +76,8 @@ export default function CreateMeal() {
               key={ingredient.id}
               food={ingredient}
               grams={ingredient.grams}
+              onClearClick={() => handleClearClick(ingredient.id)}
+              clearable
             />
           );
         })}
@@ -57,12 +97,6 @@ export default function CreateMeal() {
         }
       />
       {hasIngredients && (
-        <div>
-          <b>Totals</b>
-          <FoodMacros macros={totals.macros} kcal={totals.kcal} />
-        </div>
-      )}
-      {hasIngredients && (
         <div
           style={{
             display: "flex",
@@ -73,7 +107,7 @@ export default function CreateMeal() {
             backgroundColor: "#ffffff"
           }}
         >
-          <Button block label="create" onClick={onCreateClick} />
+          <Button block label="create" onClick={openCreateModal} />
         </div>
       )}
     </div>

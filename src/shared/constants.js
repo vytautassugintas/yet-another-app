@@ -6,10 +6,6 @@ export const viewLabels = {
   PLAN: "PLAN",
   FOOD: "FOOD",
   FOOD_CREATE_MEAL: "FOOD_CREATE_MEAL",
-  FOOD_LIST: "FOOD_LIST"
-};
-
-export const actions = {
-  CHANGE_VIEW: "changeView",
-  UPDATE_LOG: "updateLog"
+  FOOD_LIST: "FOOD_LIST",
+  FOOD_MEALS: "FOOD_MEALS"
 };

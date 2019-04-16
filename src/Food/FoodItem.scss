@@ -1,7 +1,13 @@
 .FoodItem {
+  display: flex;
+  justify-content: space-between;
   margin: 12px 0;
 
   &__title {
     font-weight: 700;
+  }
+
+  &__clear-btn {
+    align-self: center;
   }
 }
