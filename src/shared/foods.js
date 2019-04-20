@@ -74,7 +74,11 @@ export const foods = [
   createFood("Minced Chicken Breast", createMacros(0.4, 4.5, 22.5)),
   createFood("Oats SKANĖJA", createMacros(50, 6, 19.1)),
   createFood("Greek Yogurth AISTĖ", createMacros(2.3, 2, 9)),
-  createFood("Banana", createMacros(23, 0, 1))
+  createFood("Banana", createMacros(23, 0, 1)),
+  createFood("Salmon", createMacros(0.3, 10.8, 20.2)),
+  createFood("Orange", createMacros(12, 0.1, 0.9)),
+  createFood("Whole Grain Bread", createMacros(41, 1.1, 6.6)),
+  createFood("Protein Cheese VALIO PRO FEEL 5%", createMacros(0, 5, 34))
 ];
 
 export function getFoodById(id) {

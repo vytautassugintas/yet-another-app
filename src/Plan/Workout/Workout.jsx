@@ -3,7 +3,7 @@ import { currentPlan } from "../../shared/workout";
 
 import "./Workout.scss";
 
-export function Workout() {
+export default function Workout() {
   return currentPlan.map(plan => (
     <div key={plan.title} className="Workout__container">
       <p className="Workout__title">{plan.title}</p>

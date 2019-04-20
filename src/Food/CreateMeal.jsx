@@ -16,7 +16,7 @@ import "./CreateMeal.scss";
 export default function CreateMeal() {
   const {
     dispatch,
-    state: { selectedIngredients, meals }
+    state: { selectedIngredients }
   } = useContext(AppContext);
 
   const [title, setTitle] = useState("");

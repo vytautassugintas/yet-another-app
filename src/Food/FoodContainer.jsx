@@ -5,12 +5,15 @@ import { viewLabels } from "../shared/constants";
 import { AppContext } from "../App";
 
 export default function FoodContainer() {
-  const { dispatch } = useContext(AppContext);
+  const {
+    dispatch,
+    state: { meals }
+  } = useContext(AppContext);
 
   return (
     <div>
       <EntryButton
-        label="Meals"
+        label={`Meals ${meals.length ? `(${meals.length})` : ""}`}
         onClick={() => dispatch(changeView({ view: viewLabels.FOOD_MEALS }))}
       />
       <EntryButton
