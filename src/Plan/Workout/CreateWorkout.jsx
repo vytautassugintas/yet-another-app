@@ -28,6 +28,7 @@ function ExcerciseList({ exerciseList, onExerciseClick }) {
 }
 
 export default function CreateWorkout() {
+  const { dispatch } = useContext(AppContext);
   const [addedExerciseGroups, updateAddedExerciseGroups] = useState([]);
 
   function findExerciseGroup(exerciseGroups, exerciseId) {

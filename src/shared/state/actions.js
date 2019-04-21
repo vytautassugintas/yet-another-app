@@ -3,7 +3,8 @@ export const actions = {
   UPDATE_LOG: "updateLog",
   ADD_INGREDIENT: "addIngredient",
   REMOVE_INGREDIENT: "removeIngredient",
-  UPDATE_MEAL: "updateMeal"
+  UPDATE_MEAL: "updateMeal",
+  ADD_WORKOUT: "addWorkout"
 };
 
 export const changeView = ({ view, force = false, meta }) => ({
@@ -44,5 +45,13 @@ export const updateMeal = ({ title, updateType, id }) => ({
     title,
     updateType,
     id
+  }
+});
+
+export const addWorkout = ({ title, exercises }) => ({
+  type: actions.ADD_WORKOUT,
+  payload: {
+    title,
+    exercises
   }
 });
