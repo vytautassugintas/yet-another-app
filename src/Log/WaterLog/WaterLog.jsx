@@ -1,7 +1,8 @@
-import React, { useContext, useState } from "react";
+import React, { useContext } from "react";
 import { AppContext } from "../../App";
 import { RECOMMENDED_CUPS } from "../../shared/constants";
 import { increaseCupsCount } from "../../shared/state/actions";
+import { RadialProgress } from "../../shared";
 
 export default function WaterLog() {
   const {
@@ -15,6 +16,11 @@ export default function WaterLog() {
 
   return shouldDrinkMore ? (
     <>
+      <RadialProgress
+        radius={80}
+        stroke={10}
+        percent={(cupsCount / RECOMMENDED_CUPS) * 100}
+      />
       <div>
         Water Drinked {cupsCount} / {RECOMMENDED_CUPS}
       </div>
