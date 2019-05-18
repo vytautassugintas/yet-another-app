@@ -8,6 +8,7 @@ import { viewLabels } from "../shared/constants";
 import { AppContext } from "../App";
 import { EntryButton, Button, Input, Modal } from "../shared";
 import { getFoodById, modifyMacros, calculateTotals } from "../shared/foods";
+import { copy } from "../shared/copy";
 import { FoodItem } from "./FoodItem";
 import { FoodMacros } from "./FoodMacros";
 
@@ -56,7 +57,7 @@ export default function CreateMeal() {
             onChange={e => setTitle(e.target.value)}
           />
           <div className="CreateMeal__totals">
-            <b>Totals</b>
+            <b>{copy.totals}</b>
             <FoodMacros macros={totals.macros} kcal={totals.kcal} />
           </div>
           <Button onClick={handleCreateClick} label="Create" />
@@ -64,12 +65,16 @@ export default function CreateMeal() {
       </Modal>
       {hasIngredients && (
         <div className="CreateMeal__totals">
-          <b>Totals</b>
+          <b>{copy.totals}</b>
           <FoodMacros macros={totals.macros} kcal={totals.kcal} />
         </div>
       )}
       <div>
-        {hasIngredients ? <b>Selected ingredients</b> : "No ingredients"}
+        {hasIngredients ? (
+          <b>{copy.selectedIngredients}</b>
+        ) : (
+          copy.noSelectedIngredients
+        )}
         {ingredients.map(ingredient => {
           return (
             <FoodItem
@@ -84,7 +89,7 @@ export default function CreateMeal() {
       </div>
       <EntryButton
         usePlus
-        label="Add ingredient"
+        label={copy.addIngredient}
         onClick={() =>
           dispatch(
             changeView({
@@ -107,7 +112,7 @@ export default function CreateMeal() {
             backgroundColor: "#ffffff"
           }}
         >
-          <Button block label="create" onClick={openCreateModal} />
+          <Button block label={copy.create} onClick={openCreateModal} />
         </div>
       )}
     </div>

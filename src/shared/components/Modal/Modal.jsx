@@ -3,15 +3,15 @@ import React from "react";
 import "./Modal.scss";
 
 export const Modal = ({ handleClose, show, children }) => {
-  const showHideClassName = show
-    ? "Modal--display-block"
-    : "Modal--display-none";
+  if (!show) {
+    return null;
+  }
 
   return (
-    <div className={`Modal ${showHideClassName}`}>
+    <div className={`Modal Modal--display-block`}>
       <section className="Modal__main">
         {children}
-        {/* <button onClick={handleClose}>close</button> */}
+        <button onClick={handleClose}>close</button>
       </section>
     </div>
   );
