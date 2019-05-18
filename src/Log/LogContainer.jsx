@@ -1,14 +1,17 @@
 import React, { useContext } from "react";
 import { AppContext } from "../App";
 import { changeView } from "../shared/state/actions";
-import { viewLabels } from "../shared/constants";
+import { viewLabels, RECOMMENDED_CUPS } from "../shared/constants";
 import { EntryButton } from "../shared";
 
 import "./LogContainer.scss";
 
 export default function LogContainer() {
   const {
-    state: { logs },
+    state: {
+      logs,
+      waterIntake: { cupsCount }
+    },
     dispatch
   } = useContext(AppContext);
 
@@ -30,6 +33,11 @@ export default function LogContainer() {
             : ""
         }
         onClick={() => changeLogView(viewLabels.LOG_WEIGHT)}
+      />
+      <EntryButton
+        label="Water Intake"
+        subLabel={`${RECOMMENDED_CUPS - cupsCount} cups left`}
+        onClick={() => changeLogView(viewLabels.LOG_WATER)}
       />
     </>
   );

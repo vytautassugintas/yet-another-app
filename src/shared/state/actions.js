@@ -1,6 +1,7 @@
 export const actions = {
   CHANGE_VIEW: "changeView",
   UPDATE_LOG: "updateLog",
+  INCREASE_CUPS_COUNT: "increaseCupsCount",
   ADD_INGREDIENT: "addIngredient",
   REMOVE_INGREDIENT: "removeIngredient",
   UPDATE_MEAL: "updateMeal",
@@ -21,6 +22,10 @@ export const updateLog = entry => ({
   payload: {
     ...entry
   }
+});
+
+export const increaseCupsCount = () => ({
+  type: actions.INCREASE_CUPS_COUNT
 });
 
 export const addIngredient = ({ id, grams, clear = false }) => ({

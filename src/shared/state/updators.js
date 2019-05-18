@@ -25,6 +25,14 @@ export const updateLog = (state, payload) => ({
   logs: [{ ...payload, dateAdded: Date.now() }, ...state.logs]
 });
 
+export const increaseCupsCount = state => ({
+  ...state,
+  waterIntake: {
+    ...state.waterIntake,
+    cupsCount: state.waterIntake.cupsCount + 1
+  }
+});
+
 export const updateIngredients = (state, payload) => ({
   ...state,
   selectedIngredients: payload.clear
