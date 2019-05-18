@@ -4,6 +4,8 @@ import { RECOMMENDED_CUPS } from "../../shared/constants";
 import { increaseCupsCount } from "../../shared/state/actions";
 import { RadialProgress } from "../../shared";
 
+import "./WaterLog.scss";
+
 export default function WaterLog() {
   const {
     state: {
@@ -14,19 +16,25 @@ export default function WaterLog() {
 
   const shouldDrinkMore = cupsCount < RECOMMENDED_CUPS;
 
-  return shouldDrinkMore ? (
-    <>
+  return (
+    <div className="WaterLog">
       <RadialProgress
-        radius={80}
-        stroke={10}
+        radius={120}
+        stroke={12}
         percent={(cupsCount / RECOMMENDED_CUPS) * 100}
+        label={`Water Drinked ${cupsCount} / ${RECOMMENDED_CUPS}`}
       />
-      <div>
-        Water Drinked {cupsCount} / {RECOMMENDED_CUPS}
-      </div>
-      <button onClick={() => dispatch(increaseCupsCount())}>Drink Water</button>
-    </>
-  ) : (
-    "Good Job! You drank enough today"
+
+      {shouldDrinkMore ? (
+        <>
+          <div />
+          <button onClick={() => dispatch(increaseCupsCount())}>
+            Drink Water
+          </button>
+        </>
+      ) : (
+        "Good Job! You drank enough today"
+      )}
+    </div>
   );
 }
