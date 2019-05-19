@@ -19,27 +19,21 @@ export const initialState = {
   meals: []
 };
 
-export const reducer = (state, action) => {
-  switch (action.type) {
-    case actions.CHANGE_VIEW:
-      return changeView(state, action.payload);
+function createReducer(initialState, handlers) {
+  return function reducer(state = initialState, action) {
+    if (handlers.hasOwnProperty(action.type)) {
+      return handlers[action.type](state, action);
+    } else {
+      return state;
+    }
+  };
+}
 
-    case actions.UPDATE_LOG:
-      return updateLog(state, action.payload);
-
-    case actions.INCREASE_CUPS_COUNT:
-      return increaseCupsCount(state);
-
-    case actions.ADD_INGREDIENT:
-      return updateIngredients(state, action.payload);
-
-    case actions.REMOVE_INGREDIENT:
-      return removeIngredient(state, action.payload);
-
-    case actions.UPDATE_MEAL:
-      return updateMeal(state, action.payload);
-
-    default:
-      throw new Error("Unexpected action");
-  }
-};
+export const reducer = createReducer(initialState, {
+  [actions.CHANGE_VIEW]: changeView,
+  [actions.UPDATE_LOG]: updateLog,
+  [actions.INCREASE_CUPS_COUNT]: increaseCupsCount,
+  [actions.ADD_INGREDIENT]: updateIngredients,
+  [actions.REMOVE_INGREDIENT]: removeIngredient,
+  [actions.UPDATE_MEAL]: updateMeal
+});

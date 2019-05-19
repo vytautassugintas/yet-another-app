@@ -4,6 +4,7 @@ function has(object, key) {
   return object ? hasOwnProperty.call(object, key) : false;
 }
 
+// checks if there are any new fields in initial state
 function sanitazeState(localState, initialState) {
   Object.keys(initialState).forEach(key => {
     if (!has(localState, key)) {

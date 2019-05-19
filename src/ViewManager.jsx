@@ -14,7 +14,7 @@ const LazyWeightLog = React.lazy(() =>
 );
 const LazyWaterLog = React.lazy(() =>
   import(
-    /* webpackChunkName: "weight-log-container" */ "./Log/WaterLog/WaterLog"
+    /* webpackChunkName: "water-log-container" */ "./Log/WaterLog/WaterLog"
   )
 );
 const LazyPlanContainer = React.lazy(() =>

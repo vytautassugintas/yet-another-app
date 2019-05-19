@@ -1,6 +1,6 @@
 import { generateAlmostUniqueId } from "../helpers/generateUniqueID";
 
-export const changeView = (state, payload) => {
+export const changeView = (state, { payload }) => {
   if (payload.view !== state.view) {
     let meta = payload.meta;
 
@@ -20,7 +20,7 @@ export const changeView = (state, payload) => {
   return state;
 };
 
-export const updateLog = (state, payload) => ({
+export const updateLog = (state, { payload }) => ({
   ...state,
   logs: [{ ...payload, dateAdded: Date.now() }, ...state.logs]
 });
@@ -33,7 +33,7 @@ export const increaseCupsCount = state => ({
   }
 });
 
-export const updateIngredients = (state, payload) => ({
+export const updateIngredients = (state, { payload }) => ({
   ...state,
   selectedIngredients: payload.clear
     ? []
@@ -43,14 +43,14 @@ export const updateIngredients = (state, payload) => ({
       ]
 });
 
-export const removeIngredient = (state, payload) => ({
+export const removeIngredient = (state, { payload }) => ({
   ...state,
   selectedIngredients: state.selectedIngredients.filter(
     i => i.id !== payload.id
   )
 });
 
-export const updateMeal = (state, payload) => {
+export const updateMeal = (state, { payload }) => {
   switch (payload.updateType) {
     case "create":
       return {
