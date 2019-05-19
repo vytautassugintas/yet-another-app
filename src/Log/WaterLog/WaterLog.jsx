@@ -2,7 +2,7 @@ import React, { useContext } from "react";
 import { AppContext } from "../../App";
 import { RECOMMENDED_CUPS } from "../../shared/constants";
 import { increaseCupsCount } from "../../shared/state/actions";
-import { RadialProgress } from "../../shared";
+import { RadialProgress, Button } from "../../shared";
 
 import "./WaterLog.scss";
 
@@ -26,12 +26,10 @@ export default function WaterLog() {
       />
 
       {shouldDrinkMore ? (
-        <>
-          <div />
-          <button onClick={() => dispatch(increaseCupsCount())}>
-            Drink Water
-          </button>
-        </>
+        <Button
+          label="Drink Water"
+          onClick={() => dispatch(increaseCupsCount())}
+        />
       ) : (
         "Good Job! You drank enough today"
       )}
