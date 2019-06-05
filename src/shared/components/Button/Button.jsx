@@ -1,18 +1,18 @@
-import React, { useState } from "react";
-import { useInterval } from "../../hooks/useInterval";
+import React, { useState } from 'react';
+import { useInterval } from '../../hooks/useInterval';
 
-import "./Button.scss";
+import './Button.scss';
 
 export function Button({
   label,
-  type = "button",
+  type = 'button',
   block,
   isPulsing,
   ...buttonProps
 }) {
   const [pulse, setPulse] = useState(isPulsing);
-  const buttonClassNames = block ? "button--block" : "";
-  const buttonAnimationClasses = pulse ? "button--pulse" : "";
+  const buttonClassNames = block ? 'button--block' : '';
+  const buttonAnimationClasses = pulse ? 'button--pulse' : '';
 
   if (isPulsing) {
     useInterval(() => {

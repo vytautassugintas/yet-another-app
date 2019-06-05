@@ -1,18 +1,18 @@
-import React, { useContext } from "react";
-import { AppContext } from "../App";
-import { changeView } from "../shared/state/actions";
-import { viewLabels, RECOMMENDED_CUPS } from "../shared/constants";
-import { EntryButton } from "../shared";
+import React, { useContext } from 'react';
+import { AppContext } from '../App';
+import { changeView } from '../shared/state/actions';
+import { viewLabels, RECOMMENDED_CUPS } from '../shared/constants';
+import { EntryButton } from '../shared';
 
-import "./LogContainer.scss";
+import './LogContainer.scss';
 
 export default function LogContainer() {
   const {
     state: {
       logs,
-      waterIntake: { cupsCount }
+      waterIntake: { cupsCount },
     },
-    dispatch
+    dispatch,
   } = useContext(AppContext);
 
   function changeLogView(logView) {
@@ -28,9 +28,9 @@ export default function LogContainer() {
         subLabel={
           lastWeightLog
             ? `${lastWeightLog.entry} kg | ${new Date(
-                lastWeightLog.dateAdded
-              ).toLocaleDateString()}`
-            : ""
+              lastWeightLog.dateAdded,
+            ).toLocaleDateString()}`
+            : ''
         }
         onClick={() => changeLogView(viewLabels.LOG_WEIGHT)}
       />

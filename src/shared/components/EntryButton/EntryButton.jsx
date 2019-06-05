@@ -1,8 +1,10 @@
-import React from "react";
+import React from 'react';
 
-import "./EntryButton.scss";
+import './EntryButton.scss';
 
-export function EntryButton({ onClick, label, subLabel, usePlus }) {
+export function EntryButton({
+  onClick, label, subLabel, usePlus,
+}) {
   return (
     <div onClick={onClick} className="EntryButton">
       <div>

@@ -1,4 +1,4 @@
-import { generateAlmostUniqueId } from "../helpers/generateUniqueID";
+import { generateAlmostUniqueId } from '../helpers/generateUniqueID';
 
 export const changeView = (state, { payload }) => {
   if (payload.view !== state.view) {
@@ -13,7 +13,7 @@ export const changeView = (state, { payload }) => {
     return {
       ...state,
       view: payload.view,
-      meta
+      meta,
     };
   }
 
@@ -22,15 +22,15 @@ export const changeView = (state, { payload }) => {
 
 export const updateLog = (state, { payload }) => ({
   ...state,
-  logs: [{ ...payload, dateAdded: Date.now() }, ...state.logs]
+  logs: [{ ...payload, dateAdded: Date.now() }, ...state.logs],
 });
 
 export const increaseCupsCount = state => ({
   ...state,
   waterIntake: {
     ...state.waterIntake,
-    cupsCount: state.waterIntake.cupsCount + 1
-  }
+    cupsCount: state.waterIntake.cupsCount + 1,
+  },
 });
 
 export const updateIngredients = (state, { payload }) => ({
@@ -38,21 +38,21 @@ export const updateIngredients = (state, { payload }) => ({
   selectedIngredients: payload.clear
     ? []
     : [
-        ...state.selectedIngredients,
-        { id: payload.id, grams: parseInt(payload.grams) }
-      ]
+      ...state.selectedIngredients,
+      { id: payload.id, grams: parseInt(payload.grams) },
+    ],
 });
 
 export const removeIngredient = (state, { payload }) => ({
   ...state,
   selectedIngredients: state.selectedIngredients.filter(
-    i => i.id !== payload.id
-  )
+    i => i.id !== payload.id,
+  ),
 });
 
 export const updateMeal = (state, { payload }) => {
   switch (payload.updateType) {
-    case "create":
+    case 'create':
       return {
         ...state,
         meals: [
@@ -60,10 +60,10 @@ export const updateMeal = (state, { payload }) => {
           {
             id: generateAlmostUniqueId(),
             title: payload.title,
-            ingredients: state.selectedIngredients
-          }
+            ingredients: state.selectedIngredients,
+          },
         ],
-        selectedIngredients: []
+        selectedIngredients: [],
       };
     default:
       return state;

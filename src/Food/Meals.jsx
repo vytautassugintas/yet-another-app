@@ -1,16 +1,16 @@
-import React, { useContext } from "react";
-import { AppContext } from "../App";
-import { getFoodById, modifyMacros, calculateTotals } from "../shared/foods";
-import { FoodMacros } from "./FoodMacros";
+import React, { useContext } from 'react';
+import { AppContext } from '../App';
+import { getFoodById, modifyMacros, calculateTotals } from '../shared/foods';
+import { FoodMacros } from './FoodMacros';
 
 export default function Meals() {
   const {
-    state: { meals }
+    state: { meals },
   } = useContext(AppContext);
 
   return (
     <div>
-      {meals.map(meal => {
+      {meals.map((meal) => {
         const ingredients = meal.ingredients.map(({ id, grams }) => {
           const food = getFoodById(id);
           return modifyMacros(food, grams);

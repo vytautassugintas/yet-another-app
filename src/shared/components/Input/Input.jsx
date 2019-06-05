@@ -1,8 +1,10 @@
-import React from "react";
+import React from 'react';
 
-import "./Input.scss";
+import './Input.scss';
 
-export function Input({ label, rightLabel, error, ...inputProps }) {
+export function Input({
+  label, rightLabel, error, ...inputProps
+}) {
   return (
     <>
       <div className="input">

@@ -1,6 +1,6 @@
-import React, { useContext, useState } from "react";
-import { AppContext } from "../../App";
-import { excerciseList } from "../../shared/workout";
+import React, { useContext, useState } from 'react';
+import { AppContext } from '../../App';
+import { excerciseList } from '../../shared/workout';
 
 function ExcerciseList({ exerciseList, onExerciseClick }) {
   return (
@@ -32,20 +32,18 @@ export default function CreateWorkout() {
   const [addedExerciseGroups, updateAddedExerciseGroups] = useState([]);
 
   function findExerciseGroup(exerciseGroups, exerciseId) {
-    return exerciseGroups.find(group =>
-      group.excercises.find(exercise => exercise.id === exerciseId)
-    );
+    return exerciseGroups.find(group => group.excercises.find(exercise => exercise.id === exerciseId));
   }
 
   function findExistingGroup(exerciseGroups, groupId) {
     return (
-      exerciseGroups.length > 0 &&
-      exerciseGroups.find(group => group.id === groupId)
+      exerciseGroups.length > 0
+      && exerciseGroups.find(group => group.id === groupId)
     );
   }
 
   function addExerciseToGroup(groups, exercise) {
-    return groups.map(group => {
+    return groups.map((group) => {
       if (!findExerciseGroup(groups, exercise.id)) {
         group.excercises = [...group.excercises, exercise];
       }
@@ -59,12 +57,12 @@ export default function CreateWorkout() {
     const exerciseGroup = findExerciseGroup(excerciseListCopy, exercise.id);
     const existingGroup = findExistingGroup(
       addedExerciseGroups,
-      exerciseGroup.id
+      exerciseGroup.id,
     );
 
     if (existingGroup) {
       updateAddedExerciseGroups(
-        addExerciseToGroup(addedExerciseGroups, exercise)
+        addExerciseToGroup(addedExerciseGroups, exercise),
       );
     } else {
       exerciseGroup.excercises = [exercise];

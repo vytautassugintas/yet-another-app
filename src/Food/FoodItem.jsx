@@ -1,14 +1,17 @@
-import React from "react";
+import React from 'react';
 
-import { FoodMacros } from "./FoodMacros";
+import { FoodMacros } from './FoodMacros';
 
-import "./FoodItem.scss";
+import './FoodItem.scss';
 
-export function FoodItem({ food, grams, onClick, clearable, onClearClick }) {
+export function FoodItem({
+  food, grams, onClick, clearable, onClearClick,
+}) {
   return (
     <div className="FoodItem" onClick={onClick}>
       <div>
-        <span className="FoodItem__title">{food.title}</span>{" "}
+        <span className="FoodItem__title">{food.title}</span>
+        {' '}
         {grams && `${grams} g`}
         <FoodMacros macros={food.macros} kcal={food.kcal} />
       </div>

@@ -1,6 +1,6 @@
-import React, { useState } from "react";
+import React, { useState } from 'react';
 
-import "./FloatingActionButton.scss";
+import './FloatingActionButton.scss';
 
 export function FloatingActionButton() {
   const [shrink, setShrink] = useState(false);
@@ -16,7 +16,7 @@ export function FloatingActionButton() {
     <div
       onClick={onClick}
       className={`floatingActionButton ${
-        shrink ? "floatingActionButton--shrink" : ""
+        shrink ? 'floatingActionButton--shrink' : ''
       }`}
     >
       <i className="material-icons">add</i>

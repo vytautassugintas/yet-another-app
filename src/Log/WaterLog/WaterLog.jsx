@@ -1,17 +1,17 @@
-import React, { useContext } from "react";
-import { AppContext } from "../../App";
-import { RECOMMENDED_CUPS } from "../../shared/constants";
-import { increaseCupsCount } from "../../shared/state/actions";
-import { RadialProgress, Button } from "../../shared";
+import React, { useContext } from 'react';
+import { AppContext } from '../../App';
+import { RECOMMENDED_CUPS } from '../../shared/constants';
+import { increaseCupsCount } from '../../shared/state/actions';
+import { RadialProgress, Button } from '../../shared';
 
-import "./WaterLog.scss";
+import './WaterLog.scss';
 
 export default function WaterLog() {
   const {
     state: {
-      waterIntake: { cupsCount }
+      waterIntake: { cupsCount },
     },
-    dispatch
+    dispatch,
   } = useContext(AppContext);
 
   const shouldDrinkMore = cupsCount < RECOMMENDED_CUPS;
@@ -31,7 +31,7 @@ export default function WaterLog() {
           onClick={() => dispatch(increaseCupsCount())}
         />
       ) : (
-        "Good Job! You drank enough today"
+        'Good Job! You drank enough today'
       )}
     </div>
   );

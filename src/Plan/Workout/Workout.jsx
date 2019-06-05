@@ -1,7 +1,7 @@
-import React from "react";
-import { currentPlan } from "../../shared/workout";
+import React from 'react';
+import { currentPlan } from '../../shared/workout';
 
-import "./Workout.scss";
+import './Workout.scss';
 
 export default function Workout() {
   return currentPlan.map(plan => (

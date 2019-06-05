@@ -1,10 +1,10 @@
-import React, { useContext } from "react";
+import React, { useContext } from 'react';
 
-import { AppContext } from "../App";
-import { EntryButton } from "../shared";
-import { viewLabels } from "../shared/constants";
-import { changeView } from "../shared/state/actions";
-import { generateAlmostUniqueId } from "../shared/helpers/generateUniqueID";
+import { AppContext } from '../App';
+import { EntryButton } from '../shared';
+import { viewLabels } from '../shared/constants';
+import { changeView } from '../shared/state/actions';
+import { generateAlmostUniqueId } from '../shared/helpers/generateUniqueID';
 
 export default function PlanContainer() {
   const { dispatch } = useContext(AppContext);
@@ -13,13 +13,13 @@ export default function PlanContainer() {
     {
       id: generateAlmostUniqueId(),
       view: viewLabels.WORKOUT,
-      label: "Current Workout"
+      label: 'Current Workout',
     },
     {
       id: generateAlmostUniqueId(),
       view: viewLabels.WORKOUT_CREATE,
-      label: "Create Workout"
-    }
+      label: 'Create Workout',
+    },
   ];
 
   return entries.map(({ id, view, label }) => (

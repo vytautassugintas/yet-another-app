@@ -1,10 +1,10 @@
-import React from "react";
+import React from 'react';
 
-import "./WeightDashboard.scss";
+import './WeightDashboard.scss';
 
 export const WeightDashboard = ({ logs }) => {
   if (!logs.length) {
-    return "no logs yet";
+    return 'no logs yet';
   }
 
   const weightLog = logs.map(l => parseFloat(l && l.entry));
@@ -17,9 +17,9 @@ export const WeightDashboard = ({ logs }) => {
     const amplification = (maxWeight - weight) * (20 / ratio);
     return {
       entry: (weight / maxWeight) * 100 - amplification,
-      weight: weight,
+      weight,
       key: i,
-      day: new Date(l.dateAdded).getDate()
+      day: new Date(l.dateAdded).getDate(),
     };
   });
 
@@ -40,7 +40,7 @@ export const WeightDashboard = ({ logs }) => {
       entry: 100,
       key: remainingDays + index,
       day: date + index + 1,
-      filler: true
+      filler: true,
     }));
   }
 

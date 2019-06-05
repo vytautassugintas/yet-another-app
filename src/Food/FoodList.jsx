@@ -1,12 +1,12 @@
-import React, { useState, useContext } from "react";
-import { Input, Button, Modal } from "../shared";
-import { foods, getFoodById, modifyMacros } from "../shared/foods";
-import { changeView, addIngredient } from "../shared/state/actions";
-import { viewLabels } from "../shared/constants";
-import { AppContext } from "../App";
-import { FoodItem } from "./FoodItem";
+import React, { useState, useContext } from 'react';
+import { Input, Button, Modal } from '../shared';
+import { foods, getFoodById, modifyMacros } from '../shared/foods';
+import { changeView, addIngredient } from '../shared/state/actions';
+import { viewLabels } from '../shared/constants';
+import { AppContext } from '../App';
+import { FoodItem } from './FoodItem';
 
-import "./FoodList.scss";
+import './FoodList.scss';
 
 export default function FoodList() {
   const [showModal, setShowModal] = useState(false);
@@ -16,9 +16,9 @@ export default function FoodList() {
 
   const {
     dispatch,
-    state: { meta: viewMeta }
+    state: { meta: viewMeta },
   } = useContext(AppContext);
-  const [searchPredicate, updateSearchPredicate] = useState("");
+  const [searchPredicate, updateSearchPredicate] = useState('');
 
   function onSelect(id) {
     if (viewMeta && viewMeta.prevView === viewLabels.FOOD_CREATE_MEAL) {
@@ -71,9 +71,7 @@ export default function FoodList() {
       </div>
       {foods
         .sort(sortAlphabetically)
-        .filter(f =>
-          f.title.toLowerCase().includes(searchPredicate.toLowerCase())
-        )
+        .filter(f => f.title.toLowerCase().includes(searchPredicate.toLowerCase()))
         .map(f => (
           <FoodItem onClick={() => onSelect(f.id)} key={f.id} food={f} />
         ))}

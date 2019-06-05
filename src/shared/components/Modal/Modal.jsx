@@ -1,6 +1,6 @@
-import React from "react";
+import React from 'react';
 
-import "./Modal.scss";
+import './Modal.scss';
 
 export const Modal = ({ handleClose, show, children }) => {
   if (!show) {
@@ -8,7 +8,7 @@ export const Modal = ({ handleClose, show, children }) => {
   }
 
   return (
-    <div className={`Modal Modal--display-block`}>
+    <div className="Modal Modal--display-block">
       <section className="Modal__main">
         {children}
         <button onClick={handleClose}>close</button>

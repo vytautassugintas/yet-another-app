@@ -1,11 +1,11 @@
 export const actions = {
-  CHANGE_VIEW: "changeView",
-  UPDATE_LOG: "updateLog",
-  INCREASE_CUPS_COUNT: "increaseCupsCount",
-  ADD_INGREDIENT: "addIngredient",
-  REMOVE_INGREDIENT: "removeIngredient",
-  UPDATE_MEAL: "updateMeal",
-  ADD_WORKOUT: "addWorkout"
+  CHANGE_VIEW: 'changeView',
+  UPDATE_LOG: 'updateLog',
+  INCREASE_CUPS_COUNT: 'increaseCupsCount',
+  ADD_INGREDIENT: 'addIngredient',
+  REMOVE_INGREDIENT: 'removeIngredient',
+  UPDATE_MEAL: 'updateMeal',
+  ADD_WORKOUT: 'addWorkout',
 };
 
 export const changeView = ({ view, force = false, meta }) => ({
@@ -13,19 +13,19 @@ export const changeView = ({ view, force = false, meta }) => ({
   payload: {
     view,
     force,
-    meta
-  }
+    meta,
+  },
 });
 
 export const updateLog = entry => ({
   type: actions.UPDATE_LOG,
   payload: {
-    ...entry
-  }
+    ...entry,
+  },
 });
 
 export const increaseCupsCount = () => ({
-  type: actions.INCREASE_CUPS_COUNT
+  type: actions.INCREASE_CUPS_COUNT,
 });
 
 export const addIngredient = ({ id, grams, clear = false }) => ({
@@ -33,15 +33,15 @@ export const addIngredient = ({ id, grams, clear = false }) => ({
   payload: {
     id,
     grams,
-    clear
-  }
+    clear,
+  },
 });
 
 export const removeIngredient = ({ id }) => ({
   type: actions.REMOVE_INGREDIENT,
   payload: {
-    id
-  }
+    id,
+  },
 });
 
 export const updateMeal = ({ title, updateType, id }) => ({
@@ -49,14 +49,14 @@ export const updateMeal = ({ title, updateType, id }) => ({
   payload: {
     title,
     updateType,
-    id
-  }
+    id,
+  },
 });
 
 export const addWorkout = ({ title, exercises }) => ({
   type: actions.ADD_WORKOUT,
   payload: {
     title,
-    exercises
-  }
+    exercises,
+  },
 });

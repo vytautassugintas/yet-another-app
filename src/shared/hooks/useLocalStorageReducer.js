@@ -1,4 +1,4 @@
-import { useEffect, useReducer } from "react";
+import { useEffect, useReducer } from 'react';
 
 function has(object, key) {
   return object ? hasOwnProperty.call(object, key) : false;
@@ -6,7 +6,7 @@ function has(object, key) {
 
 // checks if there are any new fields in initial state
 function sanitazeState(localState, initialState) {
-  Object.keys(initialState).forEach(key => {
+  Object.keys(initialState).forEach((key) => {
     if (!has(localState, key)) {
       Object.assign(localState, { [key]: initialState[key] });
     }
@@ -17,8 +17,7 @@ export function useLocalStorageReducer(key, reducer, state) {
   let localStorageState;
 
   if (key) {
-    localStorageState =
-      (localStorage[key] && JSON.parse(localStorage[key])) || state;
+    localStorageState = (localStorage[key] && JSON.parse(localStorage[key])) || state;
   } else {
     localStorageState = state;
   }
