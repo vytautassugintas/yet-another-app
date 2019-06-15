@@ -4,19 +4,19 @@ import { AppContext } from '../App';
 import { EntryButton } from '../shared';
 import { viewLabels } from '../shared/constants';
 import { changeView } from '../shared/state/actions';
-import { generateAlmostUniqueId } from '../shared/helpers/generateUniqueID';
+import { uid } from '../shared/helpers/uid';
 
 export default function PlanContainer() {
   const { dispatch } = useContext(AppContext);
 
   const entries = [
     {
-      id: generateAlmostUniqueId(),
+      id: uid(),
       view: viewLabels.WORKOUT,
       label: 'Current Workout',
     },
     {
-      id: generateAlmostUniqueId(),
+      id: uid(),
       view: viewLabels.WORKOUT_CREATE,
       label: 'Create Workout',
     },

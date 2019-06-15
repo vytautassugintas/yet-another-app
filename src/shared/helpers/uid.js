@@ -1,4 +1,4 @@
-export function generateAlmostUniqueId() {
+export function uid() {
   return Math.random()
     .toString(36)
     .replace(/[^a-z]+/g, '')

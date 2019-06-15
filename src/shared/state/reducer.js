@@ -11,8 +11,10 @@ import { createReducer } from '../helpers/createReducer';
 
 export const initialState = {
   view: 'LOG',
+  initialized: new Date(),
   logs: [],
   waterIntake: {
+    updated: null,
     cupsCount: 0,
   },
   plan: {},

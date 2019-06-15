@@ -1,8 +1,5 @@
-import { useEffect, useReducer } from "react";
-
-function has(object, key) {
-  return object ? hasOwnProperty.call(object, key) : false;
-}
+import { useEffect, useReducer } from 'react';
+import { has } from '../helpers/has';
 
 // checks if there are any new fields in initial state
 function sanitazeState(localState, initialState) {
@@ -10,6 +7,28 @@ function sanitazeState(localState, initialState) {
     if (!has(localState, key)) {
       Object.assign(localState, { [key]: initialState[key] });
     }
+  });
+}
+
+function resetDateCounters(localState, initialState) {
+  if (!localState.waterIntake.updated) {
+    return;
+  }
+
+  const initialized = new Date(initialState.initialized);
+  const latesWaterIntake = new Date(localState.waterIntake.updated);
+
+  if (
+    initialized.getMonth() === latesWaterIntake.getMonth() &&
+    initialized.getDay() === latesWaterIntake.getDay()
+  ) {
+    return;
+  }
+
+  Object.assign(localState, {
+    waterIntake: {
+      ...initialState.waterIntake,
+    },
   });
 }
 
@@ -25,6 +44,7 @@ export function useLocalStorageReducer(key, reducer, state) {
 
   useEffect(() => {
     sanitazeState(localStorageState, state);
+    resetDateCounters(localStorageState, state);
   }, []);
 
   const [reducerState, dispatch] = useReducer(reducer, localStorageState);

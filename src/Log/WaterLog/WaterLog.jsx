@@ -24,7 +24,6 @@ export default function WaterLog() {
         percent={(cupsCount / RECOMMENDED_CUPS) * 100}
         label={`Water Drinked ${cupsCount} / ${RECOMMENDED_CUPS}`}
       />
-
       {shouldDrinkMore ? (
         <Button
           label="Drink Water"

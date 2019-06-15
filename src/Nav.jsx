@@ -4,47 +4,46 @@ import { AppContext } from './App';
 import { viewLabels as views } from './shared/constants';
 import { changeView as changeViewAction } from './shared/state/actions';
 
+import './Nav.scss';
+
 export function Nav() {
   const {
     dispatch,
-    state: { view },
+    state: { view: currentView },
   } = useContext(AppContext);
 
   function changeView(view) {
     dispatch(changeViewAction({ view }));
   }
 
+  const settings = [
+    {
+      view: views.LOG,
+      label: 'Log',
+      icon: '📖',
+    },
+    {
+      view: views.PLAN,
+      label: 'Plan',
+      icon: '🏋',
+    },
+    {
+      view: views.FOOD,
+      label: 'Food',
+      icon: '🍎',
+    },
+  ];
+
   return (
-    <div
-      style={{
-        display: 'flex',
-        position: 'fixed',
-        left: 0,
-        bottom: 0,
-        width: '100%',
-        backgroundColor: '#ffffff',
-        borderTop: '1px solid #ecf0f1',
-        paddingTop: '6px',
-      }}
-    >
-      <NavButton
-        isActive={view.includes(views.LOG)}
-        onClick={() => changeView(views.LOG)}
-        label="Log"
-        icon="📖"
-      />
-      <NavButton
-        isActive={view.includes(views.PLAN)}
-        onClick={() => changeView(views.PLAN)}
-        label="Plan"
-        icon="🏋"
-      />
-      <NavButton
-        isActive={view.includes(views.FOOD)}
-        onClick={() => changeView(views.FOOD)}
-        label="Food"
-        icon="🍎"
-      />
+    <div className="Nav">
+      {settings.map(({ view, label, icon }) => (
+        <NavButton
+          onClick={() => changeView(view)}
+          isActive={currentView.includes(view)}
+          label={label}
+          icon={icon}
+        />
+      ))}
     </div>
   );
 }

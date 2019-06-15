@@ -8,9 +8,13 @@ export default function Meals() {
     state: { meals },
   } = useContext(AppContext);
 
+  if (!meals.length) {
+    return 'No meals yet! Go and create one';
+  }
+
   return (
     <div>
-      {meals.map((meal) => {
+      {meals.map(meal => {
         const ingredients = meal.ingredients.map(({ id, grams }) => {
           const food = getFoodById(id);
           return modifyMacros(food, grams);

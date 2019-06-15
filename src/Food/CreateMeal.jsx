@@ -6,9 +6,7 @@ import {
 } from '../shared/state/actions';
 import { viewLabels } from '../shared/constants';
 import { AppContext } from '../App';
-import {
-  EntryButton, Button, Input, Modal,
-} from '../shared';
+import { EntryButton, Button, Input, Modal } from '../shared';
 import { getFoodById, modifyMacros, calculateTotals } from '../shared/foods';
 import { copy } from '../shared/copy';
 import { FoodItem } from './FoodItem';
@@ -29,9 +27,9 @@ export default function CreateMeal() {
 
   const ingredients = hasIngredients
     ? selectedIngredients.map(({ id, grams }) => {
-      const food = getFoodById(id);
-      return modifyMacros(food, grams);
-    })
+        const food = getFoodById(id);
+        return modifyMacros(food, grams);
+      })
     : [];
 
   function openCreateModal() {
@@ -40,7 +38,14 @@ export default function CreateMeal() {
 
   function handleCreateClick() {
     dispatch(updateMeal({ title, updateType: 'create' }));
-    setShowModal(false);
+    dispatch(
+      changeView({
+        view: viewLabels.FOOD,
+        meta: {
+          prevView: viewLabels.FOOD_CREATE_MEAL,
+        },
+      })
+    );
   }
 
   function handleClearClick(id) {
@@ -90,14 +95,15 @@ export default function CreateMeal() {
       <EntryButton
         usePlus
         label={copy.addIngredient}
-        onClick={() => dispatch(
-          changeView({
-            view: viewLabels.FOOD_LIST,
-            meta: {
-              prevView: viewLabels.FOOD_CREATE_MEAL,
-            },
-          }),
-        )
+        onClick={() =>
+          dispatch(
+            changeView({
+              view: viewLabels.FOOD_LIST,
+              meta: {
+                prevView: viewLabels.FOOD_CREATE_MEAL,
+              },
+            })
+          )
         }
       />
       {hasIngredients && (
