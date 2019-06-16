@@ -1,5 +1,6 @@
 import { useEffect, useReducer } from 'react';
 import { has } from '../helpers/has';
+import { CLIENT_RENEG_LIMIT } from 'tls';
 
 // checks if there are any new fields in initial state
 function sanitazeState(localState, initialState) {
@@ -11,7 +12,16 @@ function sanitazeState(localState, initialState) {
 }
 
 function resetDateCounters(localState, initialState) {
-  if (!localState.waterIntake.updated) {
+  function resetWaterIntake() {
+    Object.assign(localState, {
+      waterIntake: {
+        ...initialState.waterIntake,
+      },
+    });
+  }
+
+  if (!localState.waterIntake && !localState.waterIntake.updated) {
+    resetWaterIntake();
     return;
   }
 
@@ -25,11 +35,7 @@ function resetDateCounters(localState, initialState) {
     return;
   }
 
-  Object.assign(localState, {
-    waterIntake: {
-      ...initialState.waterIntake,
-    },
-  });
+  resetWaterIntake();
 }
 
 export function useLocalStorageReducer(key, reducer, state) {
