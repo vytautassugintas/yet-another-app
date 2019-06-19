@@ -3,6 +3,8 @@ import { AppContext } from '../App';
 import { getFoodById, modifyMacros, calculateTotals } from '../shared/foods';
 import { FoodMacros } from './FoodMacros';
 
+import './Meals.scss';
+
 export default function Meals() {
   const {
     state: { meals },
@@ -21,10 +23,13 @@ export default function Meals() {
         });
 
         const totals = calculateTotals(ingredients);
+        console.log(ingredients, totals);
 
         return (
           <div key={meal.id}>
-            <div>{meal.title}</div>
+            <div className="Meals__title">
+              {meal.title} | {totals.grams} g
+            </div>
             <FoodMacros macros={totals.macros} kcal={totals.kcal} />
           </div>
         );
