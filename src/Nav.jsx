@@ -36,8 +36,9 @@ export function Nav() {
 
   return (
     <div className="Nav">
-      {settings.map(({ view, label, icon }) => (
+      {settings.map(({ view, label, icon }, index) => (
         <NavButton
+          key={index}
           onClick={() => changeView(view)}
           isActive={currentView.includes(view)}
           label={label}
